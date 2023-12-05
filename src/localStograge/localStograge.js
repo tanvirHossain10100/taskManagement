@@ -1,6 +1,5 @@
 const localSTorage = (isTrue) => {
   const data = localStorage.getItem("tasks");
-  console.log(data);
   if (isTrue) {
     const data = JSON.stringify(isTrue);
     localStorage.setItem("tasks", data);

@@ -1,13 +1,12 @@
 import localSTorage from "../localStograge/localStograge";
 
 export const reducer = (state, action) => {
-  console.log(state);
   switch (action.type) {
     case "addTodo": {
       const newTodoValue = action.payload;
       // action.payload.target.inputTodo.value = "";
       const newTodods = {
-        id: state.tasks.length + 1,
+        id: Date.now(),
         task: newTodoValue,
         completed: false,
       };
