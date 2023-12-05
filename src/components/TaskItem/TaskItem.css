@@ -1,6 +1,4 @@
 .todoItem {
-  /* display: flex; */
-  /* align-items: self-start; */
   justify-content: space-between;
   max-width: 900px;
 }
@@ -12,10 +10,6 @@
   align-items: center;
   width: 100%;
 }
-
-/* .todoItemUl > li:first-child, .todoItemUl > li:last-child {
-  width: 10%;
-} */
 .todoItem del {
   text-decoration-thickness: 2px;
   color: #ffb6c1;
@@ -49,7 +43,6 @@ li button {
 }
 .notClicked {
   color: black;
-  /* background-color: w; */
 }
 .updateBtn {
   padding: 0;
@@ -60,27 +53,22 @@ li button {
 }
 .inputFocus {
   margin-left: -1000px;
-  /* transition: 5s ease-in-out; */
 }
 .inputFocus:focus {
   margin: 0;
 }
 .inputFocus {
-  transition: transform 6000s ease-out; /* You can adjust the duration and easing function as needed */
+  transition: transform 6000s ease-out;
 }
 
 .inputFocus.leftTransition {
-  transform: translateX(
-    -30%
-  ); /* Adjust the percentage as needed for the desired distance */
+  transform: translateX(-30%);
 }
 .leftTransition {
-  transform: translateX(
-    -30%
-  ); /* Adjust the percentage as needed for the desired distance */
+  transform: translateX(-30%);
 }
 .inputFocus.leftTransition:onk {
-  transform: translateX(-100%); /* End position, adjust as needed */
+  transform: translateX(-100%);
 }
 
 .task {
