@@ -1,0 +1,33 @@
+.TodoListPage {
+  text-align: center;
+}
+input[type="text"] {
+  color: #fff;
+  outline: none;
+  background: rgba(0, 0, 0, 0.2);
+  min-width: 340px;
+  /* width: 400px; */
+  height: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: 0.24s all ease-in-out;
+  margin: 20px 0;
+
+  &:focus {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: none;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+#addTodoBtn {
+  background-color: yellow;
+  padding: 10px; 
+  color: black;
+}
+
+.todoList {
+  max-width: 900px;
+  margin-inline: auto;
+}
+.header h1 {
+  padding-top: 20px;
+}

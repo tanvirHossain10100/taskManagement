@@ -1,0 +1,99 @@
+.todoItem {
+  /* display: flex; */
+  /* align-items: self-start; */
+  justify-content: space-between;
+  max-width: 900px;
+}
+
+.todoItem .todoItemUl {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+/* .todoItemUl > li:first-child, .todoItemUl > li:last-child {
+  width: 10%;
+} */
+.todoItem del {
+  text-decoration-thickness: 2px;
+  color: #ffb6c1;
+
+  height: 50px;
+}
+.todoItem ul li {
+  color: white;
+}
+.todoTask {
+  width: 30%;
+}
+.todoItem del span {
+  color: white;
+}
+.todoItem .dust img {
+  height: 40px;
+  width: 40px;
+}
+.todoItem li {
+  font-size: 2rem;
+  text-align: left;
+}
+li button {
+  cursor: pointer;
+}
+
+.clicked {
+  background-color: white;
+  color: white;
+}
+.notClicked {
+  color: black;
+  /* background-color: w; */
+}
+.updateBtn {
+  padding: 0;
+  background-color: red;
+  height: 40px;
+  width: 80px;
+  cursor: pointer;
+}
+.inputFocus {
+  margin-left: -1000px;
+  /* transition: 5s ease-in-out; */
+}
+.inputFocus:focus {
+  margin: 0;
+}
+.inputFocus {
+  transition: transform 6000s ease-out; /* You can adjust the duration and easing function as needed */
+}
+
+.inputFocus.leftTransition {
+  transform: translateX(
+    -30%
+  ); /* Adjust the percentage as needed for the desired distance */
+}
+.leftTransition {
+  transform: translateX(
+    -30%
+  ); /* Adjust the percentage as needed for the desired distance */
+}
+.inputFocus.leftTransition:onk {
+  transform: translateX(-100%); /* End position, adjust as needed */
+}
+
+.task {
+  position: relative;
+  animation: mymove 1s;
+  left: 50px;
+}
+
+@keyframes mymove {
+  from {
+    left: -60px;
+  }
+  to {
+    left: 50px;
+  }
+}
