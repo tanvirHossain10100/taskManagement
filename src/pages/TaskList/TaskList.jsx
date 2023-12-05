@@ -17,7 +17,7 @@ const TaskList = () => {
     const task = e.target.inputTodo.value;
     const alphabeticPattern = /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/;
     if (task === null || task === " " || !alphabeticPattern.test(task)) {
-      return alert("Please add todo");
+      return alert("Please add your task");
     }
     e.target.inputTodo.value = "";
     const newTodo = {
@@ -27,7 +27,7 @@ const TaskList = () => {
     dispatch(newTodo);
   };
   const completedBtn = (id) => {
-    const updateStatus = state.reduce((acc, current) => {
+    const updateStatus = state.tasks.reduce((acc, current) => {
       if (current.id === id) {
         current.completed = !current.completed;
       }
@@ -38,15 +38,16 @@ const TaskList = () => {
       type: "completed",
       payload: updateStatus,
     };
+    localSTorage({ tasks: updateStatus });
     dispatch(completeTodo);
   };
   const delBtn = (id) => {
-    const rest = state.filter((item) => item.id !== id);
+    const rest = state.tasks.filter((item) => item.id !== id);
     const restTodo = {
       type: "restTodos",
       payload: rest,
     };
-    localSTorage(rest);
+    localSTorage({ tasks: rest });
     dispatch(restTodo);
   };
   const updateTodoStatus = (id) => {
@@ -54,7 +55,7 @@ const TaskList = () => {
     if (!alphabeticPattern.test(updateTodo)) {
       return alert("Please write valid task");
     }
-    const updateTodoStatus = state.reduce((acc, current) => {
+    const updateTodoStatus = state.tasks.reduce((acc, current) => {
       if (id === current.id) {
         if (updateTodo !== "" || null) {
           current.task = updateTodo;
@@ -71,7 +72,7 @@ const TaskList = () => {
       type: "update",
       payload: updateTodoStatus,
     };
-    localSTorage(updateTodoParticularTodo);
+    localSTorage({ tasks: updateTodoStatus });
     dispatch(updateTodoParticularTodo);
   };
   const enterEventForUpdateTodoText = (id, e) => {
@@ -80,7 +81,7 @@ const TaskList = () => {
       return alert("Please write valid task");
     }
     if (e.key === "Enter") {
-      const updateTodoStatus = state.reduce((acc, current) => {
+      const updateTodoStatus = state.tasks.reduce((acc, current) => {
         if (id === current.id) {
           if (updateTodo !== "" || null) {
             current.task = updateTodo;
@@ -96,7 +97,7 @@ const TaskList = () => {
         type: "update",
         payload: updateTodoStatus,
       };
-      localSTorage(updateTodoStatus);
+      localSTorage({ tasks: updateTodoStatus });
       dispatch(updateTodoParticularTodo);
     }
   };
@@ -110,9 +111,9 @@ const TaskList = () => {
         <div className="newTodo">
           {<TaskForm onSubmit={AddTotTodo}></TaskForm>}
         </div>
-        {state.length > 0 ? (
+        {state?.tasks?.length > 0 ? (
           <div className="todoList">
-            {state.map((item, index) => (
+            {state.tasks.map((item, index) => (
               <TaskITem
                 index={index}
                 key={item.id}
