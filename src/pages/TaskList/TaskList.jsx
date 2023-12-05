@@ -2,7 +2,7 @@
 import { useReducer, useState } from "react";
 import "./TaskList.css";
 
-import { reducer } from "../../Reduce/Reduce";
+import { reducer } from "../../Reduce/reduce";
 import { TaskForm } from "../../components/TaskForm/TaskForm";
 import TaskITem from "../../components/TaskItem/TaskItem";
 import localSTorage from "../../localStograge/localStograge";
