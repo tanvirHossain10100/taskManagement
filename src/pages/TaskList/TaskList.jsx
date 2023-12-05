@@ -110,22 +110,26 @@ const TaskList = () => {
         <div className="newTodo">
           {<TaskForm onSubmit={AddTotTodo}></TaskForm>}
         </div>
-        <div className="todoList">
-          {state.map((item, index) => (
-            <TaskITem
-              index={index}
-              key={item.id}
-              item={item}
-              completedBtn={completedBtn}
-              delBtn={delBtn}
-              updateTodoStatus={updateTodoStatus}
-              setChildSTate={setUpdateTodo}
-              currentUpdateTodo={updateTodo}
-              enterEvent={enterEventForUpdateTodoText}
-              reducer={{ state, dispatch }}
-            ></TaskITem>
-          ))}
-        </div>
+        {state.length > 0 ? (
+          <div className="todoList">
+            {state.map((item, index) => (
+              <TaskITem
+                index={index}
+                key={item.id}
+                item={item}
+                completedBtn={completedBtn}
+                delBtn={delBtn}
+                updateTodoStatus={updateTodoStatus}
+                setChildSTate={setUpdateTodo}
+                currentUpdateTodo={updateTodo}
+                enterEvent={enterEventForUpdateTodoText}
+                reducer={{ state, dispatch }}
+              ></TaskITem>
+            ))}
+          </div>
+        ) : (
+          <h2>No Task added yet</h2>
+        )}
       </div>
     </>
   );

@@ -71,7 +71,6 @@ const TaskITem = ({
             <>
               <span onClick={() => setUpdateINputToggle(false)}>
                 <button
-                  // disabled={completed ? true : false}
                   className="updateBtn"
                   onClick={(e) => updateTodoStatus(id, e)}
                 >
