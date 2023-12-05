@@ -14,7 +14,6 @@ const TaskList = () => {
   /*  */
   const AddTotTodo = (e) => {
     e.preventDefault();
-    console.log("hey");
     const task = e.target.inputTodo.value;
     const alphabeticPattern = /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/;
     if (task === null || task === " " || !alphabeticPattern.test(task)) {
@@ -43,7 +42,6 @@ const TaskList = () => {
   };
   const delBtn = (id) => {
     const rest = state.filter((item) => item.id !== id);
-    console.log(rest, "rekdsk");
     const restTodo = {
       type: "restTodos",
       payload: rest,
@@ -60,7 +58,6 @@ const TaskList = () => {
       if (id === current.id) {
         if (updateTodo !== "" || null) {
           current.task = updateTodo;
-          console.log(updateTodo);
           setUpdateTodo("");
         } else {
           alert("Please add your todo");
@@ -82,13 +79,11 @@ const TaskList = () => {
     if (!alphabeticPattern.test(updateTodo)) {
       return alert("Please write valid task");
     }
-    console.log(e);
     if (e.key === "Enter") {
       const updateTodoStatus = state.reduce((acc, current) => {
         if (id === current.id) {
           if (updateTodo !== "" || null) {
             current.task = updateTodo;
-            console.log(updateTodo);
             setUpdateTodo("");
           } else {
             alert("Please add your todos");

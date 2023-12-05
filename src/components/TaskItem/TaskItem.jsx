@@ -17,8 +17,6 @@ const TaskITem = ({
   };
   const onchange = (e) => {
     const todo = e.target.value;
-
-    console.log(todo);
     setChildSTate(todo);
     setUpdateText(todo);
   };
