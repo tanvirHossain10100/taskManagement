@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./TaskItem.css";
 const TaskITem = ({
   item: { id, completed, task },
   completedBtn,
